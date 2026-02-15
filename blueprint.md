@@ -4,6 +4,16 @@
 This project is a simple web application that provides random lunch menu recommendations to the user. It is built using modern web standards (HTML, CSS, JavaScript) without external frameworks.
 
 ## Project Outline
+### Version 1.4 (Teachable Machine Food Preference Test)
+*   **Purpose:** Integrate a Teachable Machine model to test user preference for "밥" (rice) vs. "면" (noodles).
+*   **Features:**
+    *   **New Page (`test.html`):** A dedicated HTML page that hosts the Teachable Machine webcam-based classifier.
+    *   **Model Integration:** Uses TensorFlow.js and Teachable Machine libraries to load and run a pre-trained model.
+    *   **Webcam Input:** Captures video from the user's webcam for real-time classification.
+    *   **Classification Display:** Shows predictions for "밥" or "면" with probability scores.
+    *   **Navigation:** A link in `index.html` directs to this page, and a link in `test.html` returns to the main page.
+    *   **Styling:** `style.css` has been updated with specific styles for the webcam container, label display, and navigation links, ensuring theme consistency.
+
 ### Version 1.3 (Disqus Comment Integration)
 *   **Purpose:** Add a comment section to the page using Disqus.
 *   **Features:**
@@ -31,4 +41,4 @@ This project is a simple web application that provides random lunch menu recomme
     *   `main.js`: Implements the core logic. It defines a list of diverse lunch menus, and on button click, it randomly selects and displays one of the menus in the designated paragraph.
 
 ## Current Plan
-The Disqus comment feature has been implemented. The final step is to verify the changes, commit them, and push to the GitHub repository for deployment.
+The "밥 vs 면" Teachable Machine test page has been implemented, including its dedicated HTML, updated CSS, and integration with the main page. The next step is to verify the changes, commit them, and push to the GitHub repository for deployment.
