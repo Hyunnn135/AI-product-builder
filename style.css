@@ -213,3 +213,49 @@ p#recommendation {
 .home-link:hover {
     text-decoration: underline;
 }
+
+.top-right-buttons {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    gap: 10px; /* Space between buttons */
+}
+
+/* Styling for buttons inside top-right-buttons, similar to theme-toggle */
+.top-right-buttons button {
+    background: var(--toggle-bg-color);
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em; /* Smaller font for smaller buttons */
+    color: var(--toggle-icon-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: bold; /* Make EN/KO stand out */
+}
+
+.top-right-buttons button:hover {
+    background-color: var(--button-hover-bg-color);
+}
+
+/* Adjust general button styling if needed for specific buttons that are not top-right */
+button#foodTestButton {
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px; /* Add margin to separate from content */
+}
+
+button#foodTestButton:hover {
+    background-color: var(--button-hover-bg-color);
+}

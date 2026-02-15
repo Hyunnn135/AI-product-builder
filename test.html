@@ -8,51 +8,112 @@
 </head>
 <body>
     <div class="container">
-        <h1>밥 vs 면: 당신의 취향은?</h1>
-        <p>웹캠을 통해 당신이 밥을 좋아하는지, 면을 좋아하는지 인공지능이 분석해 드립니다!</p>
-        <button type="button" onclick="init()">테스트 시작</button>
+        <div class="top-right-buttons">
+            <button id="language-toggle">EN</button>
+            <button type="button" id="startButton">테스트 시작</button>
+        </div>
+        <h1 id="page-title">밥 vs 면: 당신의 취향은?</h1>
+        <p id="page-description">웹캠을 통해 당신이 밥을 좋아하는지, 면을 좋아하는지 인공지능이 분석해 드립니다!</p>
         <div id="webcam-container"></div>
         <div id="label-container"></div>
-        <a href="/" class="home-link">메인으로 돌아가기</a>
+        <a href="/" class="home-link" id="home-link">메인으로 돌아가기</a>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
     <script type="text/javascript">
-        const URL = "https://teachablemachine.withgoogle.com/models/B2G9-Yg46/";
+        // More API functions here:
+        // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
 
+        const URL = "https://teachablemachine.withgoogle.com/models/B2G9-Yg46/";
         let model, webcam, labelContainer, maxPredictions;
 
+        const elementsToTranslate = {
+            'page-title': {
+                'ko': '밥 vs 면: 당신의 취향은?',
+                'en': 'Rice vs Noodles: Your Preference?'
+            },
+            'page-description': {
+                'ko': '웹캠을 통해 당신이 밥을 좋아하는지, 면을 좋아하는지 인공지능이 분석해 드립니다!',
+                'en': 'Through your webcam, AI will analyze whether you prefer rice or noodles!'
+            },
+            'startButton': {
+                'ko': '테스트 시작',
+                'en': 'Start Test'
+            },
+            'home-link': {
+                'ko': '메인으로 돌아가기',
+                'en': 'Go back to Main'
+            }
+        };
+
+        function setLanguage(lang) {
+            document.documentElement.lang = lang; // Set HTML lang attribute
+            for (const id in elementsToTranslate) {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.textContent = elementsToTranslate[id][lang];
+                }
+            }
+            // Update button text explicitly as it might not be in elementsToTranslate initially
+            const languageToggleButton = document.getElementById('language-toggle');
+            if (languageToggleButton) {
+                languageToggleButton.textContent = (lang === 'ko' ? 'EN' : 'KO');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const startButton = document.getElementById('startButton');
+            const languageToggleButton = document.getElementById('language-toggle');
+
+            let currentLang = localStorage.getItem('lang') || 'ko';
+            setLanguage(currentLang);
+
+            languageToggleButton.addEventListener('click', () => {
+                currentLang = (currentLang === 'ko' ? 'en' : 'ko');
+                localStorage.setItem('lang', currentLang);
+                setLanguage(currentLang);
+            });
+
+            startButton.addEventListener('click', init);
+        });
+
+        // Load the image model and setup the webcam
         async function init() {
             const modelURL = URL + "model.json";
             const metadataURL = URL + "metadata.json";
 
+            // load the model and metadata
             model = await tmImage.load(modelURL, metadataURL);
             maxPredictions = model.getTotalClasses();
 
-            const flip = true;
-            webcam = new tmImage.Webcam(200, 200, flip);
-            await webcam.setup();
+            // Convenience function to setup a webcam
+            const flip = true; // whether to flip the webcam
+            webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
+            await webcam.setup(); // request access to the webcam
             await webcam.play();
             window.requestAnimationFrame(loop);
 
+            // append elements to the DOM
             document.getElementById("webcam-container").appendChild(webcam.canvas);
             labelContainer = document.getElementById("label-container");
-            for (let i = 0; i < maxPredictions; i++) {
+            for (let i = 0; i < maxPredictions; i++) { // and class labels
                 labelContainer.appendChild(document.createElement("div"));
             }
 
             // Hide the start button after starting
-            document.querySelector('button[onclick="init()"]').style.display = 'none';
+            document.getElementById('startButton').style.display = 'none';
         }
 
         async function loop() {
-            webcam.update();
+            webcam.update(); // update the webcam frame
             await predict();
             window.requestAnimationFrame(loop);
         }
 
+        // run the webcam image through the image model
         async function predict() {
+            // predict can take in an image, video or canvas html element
             const prediction = await model.predict(webcam.canvas);
             for (let i = 0; i < maxPredictions; i++) {
                 const classPrediction =
