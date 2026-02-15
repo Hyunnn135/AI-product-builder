@@ -249,3 +249,36 @@ p#recommendation {
 .top-right-buttons button:hover {
     background-color: var(--button-hover-bg-color);
 }
+
+.main-footer {
+    width: 100%;
+    max-width: 500px; /* Match container max-width */
+    margin-top: 30px;
+    padding: 20px;
+    text-align: center;
+    background-color: var(--container-bg-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    color: var(--text-color);
+}
+
+.main-footer nav a {
+    color: var(--button-bg-color); /* Use a distinct color for links */
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.main-footer nav a:hover {
+    color: var(--button-hover-bg-color);
+    text-decoration: underline;
+}
+
+.main-footer p#footer-copyright {
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: var(--text-color);
+}
+

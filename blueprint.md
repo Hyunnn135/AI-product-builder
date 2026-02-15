@@ -19,6 +19,14 @@ This project is a simple web application that provides random lunch menu recomme
     *   **Navigation:** A link in `index.html` directs to this page, and a link in `test.html` returns to the main page.
     *   **Styling:** `style.css` has been thoroughly updated with specific styles for the webcam container, label display, navigation links, and the new button layouts, ensuring theme consistency and correct positioning across both pages.
 
+### Version 1.5 (AdSense Readiness - Essential Pages & Navigation)
+*   **Purpose:** Enhance site structure and content for potential Google AdSense approval by adding essential pages and consistent navigation.
+*   **Features:**
+    *   **About Us Page (`about.html`):** A dedicated page explaining the website's purpose, features, and vision. Includes theme and language toggles.
+    *   **Privacy Policy Page (`privacy.html`):** A dedicated page outlining the website's privacy practices, including data collection and usage. Includes theme and language toggles.
+    *   **Consistent Footer Navigation:** A new footer (`.main-footer`) has been added to `index.html`, `test.html`, `about.html`, and `privacy.html`. This footer contains links to Home, About Us, Privacy Policy, Contact Us (linking to the contact form on `index.html`), and the Food Test page.
+    *   **Styling:** `style.css` has been updated to provide a clean and responsive design for the footer navigation, integrated with the existing theme.
+
 ### Version 1.3 (Disqus Comment Integration)
 *   **Purpose:** Add a comment section to the page using Disqus.
 *   **Features:**
@@ -46,5 +54,5 @@ This project is a simple web application that provides random lunch menu recomme
     *   `main.js`: Implements the core logic. It defines a list of diverse lunch menus, and on button click, it randomly selects and displays one of the menus in the designated paragraph.
 
 ## Current Plan
-All UI enhancements for the "밥 vs 면" Teachable Machine test page, including full theme and language toggling on both pages, button repositioning, and consistent styling, have been implemented. The next step is to verify these changes, commit them, and push to the GitHub repository for deployment.
+The essential pages (About Us, Privacy Policy) have been created and a consistent footer navigation has been added to all pages. This significantly improves the site's structure for AdSense approval. The next step is to verify these changes, commit them, and push to the GitHub repository for deployment.
 
