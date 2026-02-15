@@ -27,6 +27,12 @@ This project is a simple web application that provides random lunch menu recomme
     *   **Consistent Footer Navigation:** A new footer (`.main-footer`) has been added to `index.html`, `test.html`, `about.html`, and `privacy.html`. This footer contains links to Home, About Us, Privacy Policy, Contact Us (linking to the contact form on `index.html`), and the Food Test page.
     *   **Styling:** `style.css` has been updated to provide a clean and responsive design for the footer navigation, integrated with the existing theme.
 
+### Version 1.6 (Google AdSense Integration)
+*   **Purpose:** Integrate Google AdSense for monetization and site verification.
+*   **Features:**
+    *   **AdSense Script:** The Google AdSense auto-ads script (`adsbygoogle.js`) has been added to the `<head>` section of all primary HTML pages (`index.html`, `test.html`, `about.html`, `privacy.html`).
+    *   **AdSense Meta Tag:** The Google AdSense verification meta tag (`google-adsense-account`) has been added to the `<head>` section of all primary HTML pages for site ownership verification.
+
 ### Version 1.3 (Disqus Comment Integration)
 *   **Purpose:** Add a comment section to the page using Disqus.
 *   **Features:**
@@ -54,5 +60,5 @@ This project is a simple web application that provides random lunch menu recomme
     *   `main.js`: Implements the core logic. It defines a list of diverse lunch menus, and on button click, it randomly selects and displays one of the menus in the designated paragraph.
 
 ## Current Plan
-The essential pages (About Us, Privacy Policy) have been created and a consistent footer navigation has been added to all pages. This significantly improves the site's structure for AdSense approval. The next step is to verify these changes, commit them, and push to the GitHub repository for deployment.
+Google AdSense script and meta tags have been integrated into all primary HTML pages for verification and auto-ads. The next step is to verify these changes, commit them, and push to the GitHub repository for deployment.
 
