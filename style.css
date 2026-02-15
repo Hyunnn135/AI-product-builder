@@ -24,10 +24,12 @@ body.dark-mode {
 body {
     font-family: Arial, sans-serif;
     display: flex;
+    flex-direction: column; /* Stack containers vertically */
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0;
+    padding: 20px 0; /* Add some padding to the top and bottom */
     background-color: var(--bg-color);
     color: var(--text-color);
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -154,4 +156,21 @@ p#recommendation {
 
 .contact-form-container button[type="submit"]:hover {
     background-color: var(--button-hover-bg-color);
+}
+
+.disqus-container {
+    background-color: var(--container-bg-color);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 90%;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.disqus-container h2 {
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 25px;
 }

@@ -4,6 +4,12 @@
 This project is a simple web application that provides random lunch menu recommendations to the user. It is built using modern web standards (HTML, CSS, JavaScript) without external frameworks.
 
 ## Project Outline
+### Version 1.3 (Disqus Comment Integration)
+*   **Purpose:** Add a comment section to the page using Disqus.
+*   **Features:**
+    *   **Disqus Embed:** The Disqus Universal Embed Code has been added to `index.html` to load the comment thread.
+    *   **Container Styling:** The comment section is placed in a styled container in `style.css` that matches the overall theme. The body layout was updated to stack content vertically.
+
 ### Version 1.2 (Contact Form Integration)
 *   **Purpose:** Add a simple contact form for partnership inquiries using Formspree.
 *   **Features:**
@@ -25,4 +31,4 @@ This project is a simple web application that provides random lunch menu recomme
     *   `main.js`: Implements the core logic. It defines a list of diverse lunch menus, and on button click, it randomly selects and displays one of the menus in the designated paragraph.
 
 ## Current Plan
-The contact form feature has been implemented and styled. The next step is to commit these changes and push them to the GitHub repository for deployment.
+The Disqus comment feature has been implemented. The final step is to verify the changes, commit them, and push to the GitHub repository for deployment.
