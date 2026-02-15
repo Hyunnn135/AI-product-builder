@@ -4,17 +4,18 @@
 This project is a simple web application that provides random lunch menu recommendations to the user. It is built using modern web standards (HTML, CSS, JavaScript) without external frameworks.
 
 ## Project Outline
-### Version 1.4 (Teachable Machine Food Preference Test with UI Enhancements)
-*   **Purpose:** Integrate a Teachable Machine model to test user preference for "밥" (rice) vs. "면" (noodles), and enhance the UI with button repositioning and language selection.
+### Version 1.4 (Teachable Machine Food Preference Test with UI Enhancements and Language Selection)
+*   **Purpose:** Integrate a Teachable Machine model to test user preference for "밥" (rice) vs. "면" (noodles), and enhance the UI with button repositioning and comprehensive language selection.
 *   **Features:**
     *   **New Page (`test.html`):** A dedicated HTML page that hosts the Teachable Machine webcam-based classifier.
     *   **Model Integration:** Uses TensorFlow.js and Teachable Machine libraries to load and run a pre-trained model.
     *   **Webcam Input:** Captures video from the user's webcam for real-time classification.
     *   **Classification Display:** Shows predictions for "밥" or "면" with probability scores.
-    *   **Button Repositioning:** The "테스트 시작" button in `test.html` has been moved to the top-right corner.
-    *   **Language Selection:** A new button in the top-right of `test.html` allows users to toggle between Korean (KO) and English (EN) for the page's text content. Language preference is saved in `localStorage`.
+    *   **Language Selection (Both Pages):** A new button in the top-right of both `index.html` and `test.html` allows users to toggle between Korean (KO) and English (EN) for the page's text content. Language preference is saved in `localStorage`.
+    *   **Consistent Button Positioning:** Language toggle buttons are consistently positioned at the top-right of the page on both `index.html` and `test.html`. The theme toggle on `index.html` is also within this `top-right-buttons` group.
+    *   **Button Repositioning (`test.html`):** The "테스트 시작" button in `test.html` has been moved to the bottom-center of the page.
     *   **Navigation:** A link in `index.html` directs to this page, and a link in `test.html` returns to the main page.
-    *   **Styling:** `style.css` has been updated with specific styles for the webcam container, label display, navigation links, and the new top-right button group, ensuring theme consistency.
+    *   **Styling:** `style.css` has been thoroughly updated with specific styles for the webcam container, label display, navigation links, and the new button layouts, ensuring theme consistency and correct positioning across both pages.
 
 ### Version 1.3 (Disqus Comment Integration)
 *   **Purpose:** Add a comment section to the page using Disqus.
@@ -43,4 +44,4 @@ This project is a simple web application that provides random lunch menu recomme
     *   `main.js`: Implements the core logic. It defines a list of diverse lunch menus, and on button click, it randomly selects and displays one of the menus in the designated paragraph.
 
 ## Current Plan
-The "밥 vs 면" Teachable Machine test page has been enhanced with button repositioning and a language selection feature. All related HTML, CSS, and JavaScript have been updated. The next step is to verify these changes, commit them, and push to the GitHub repository for deployment.
+All UI enhancements for the "밥 vs 면" Teachable Machine test page, including button repositioning and comprehensive language selection across both pages, have been implemented. The next step is to verify these changes, commit them, and push to the GitHub repository for deployment.

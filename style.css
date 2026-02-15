@@ -243,8 +243,8 @@ p#recommendation {
     background-color: var(--button-hover-bg-color);
 }
 
-/* Adjust general button styling if needed for specific buttons that are not top-right */
-button#foodTestButton {
+/* Styling for the Start Test button in test.html */
+#startButton {
     background-color: var(--button-bg-color);
     color: var(--button-text-color);
     border: none;
@@ -253,9 +253,9 @@ button#foodTestButton {
     font-size: 1em;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-top: 20px; /* Add margin to separate from content */
+    margin-top: 20px;
 }
 
-button#foodTestButton:hover {
+#startButton:hover {
     background-color: var(--button-hover-bg-color);
 }
