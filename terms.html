@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">이용 약관</title>
+    <meta name="google-adsense-account" content="ca-pub-3416211588228348">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3416211588228348"
+     crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <div class="top-right-buttons">
+            <button id="theme-toggle">🌙</button>
+            <button id="language-toggle">EN</button>
+        </div>
+        <h1 id="terms-heading">이용 약관</h1>
+        <p id="terms-content-p1">
+            본 웹사이트(AI-product-builder)의 서비스 이용에 오신 것을 환영합니다.
+            본 약관은 귀하가 본 웹사이트의 서비스를 이용하는 데 적용되는 조건 및 규칙을 명시합니다.
+            서비스를 이용하기 전에 본 약관을 주의 깊게 읽어 주시기 바랍니다.
+        </p>
+        <h2 id="terms-section-1-title">1. 서비스 이용</h2>
+        <p id="terms-section-1-content">
+            본 웹사이트는 점심 메뉴 추천, AI 기반 음식 선호도 테스트, 제휴 문의, 댓글 기능 등을 제공합니다.
+            모든 서비스는 "있는 그대로" 제공되며, 웹사이트는 서비스의 중단, 오류 또는 손실에 대해 책임을 지지 않습니다.
+        </p>
+        <h2 id="terms-section-2-title">2. 사용자 의무</h2>
+        <p id="terms-section-2-content">
+            귀하는 본 웹사이트의 서비스를 불법적인 목적으로 사용하지 않을 것에 동의합니다.
+            서비스를 이용하는 동안 다른 사용자에게 불쾌감을 주거나, 법률을 위반하는 행위를 하지 않아야 합니다.
+            제공된 AI 테스트 결과는 오락 및 참고용이며, 전문가의 조언을 대체할 수 없습니다.
+        </p>
+        <h2 id="terms-section-3-title">3. 개인정보 보호</h2>
+        <p id="terms-section-3-content">
+            귀하의 개인정보 보호는 본 웹사이트의 최우선 가치입니다.
+            개인정보 수집, 이용 및 보호에 관한 자세한 내용은 별도의 개인정보처리방침을 참조해 주시기 바랍니다.
+        </p>
+        <h2 id="terms-section-4-title">4. 저작권</h2>
+        <p id="terms-section-4-content">
+            본 웹사이트의 모든 콘텐츠(텍스트, 이미지, 코드 등)에 대한 저작권은 본 웹사이트 또는 해당 콘텐츠 제공자에게 있습니다.
+            무단 복제, 배포 또는 상업적 이용을 금지합니다.
+        </p>
+        <h2 id="terms-section-5-title">5. 약관 변경</h2>
+        <p id="terms-section-5-content">
+            본 웹사이트는 필요한 경우 약관을 변경할 수 있습니다.
+            변경 사항은 웹사이트에 게시된 날로부터 효력이 발생하며, 변경된 약관에 동의하지 않는 경우
+            서비스 이용을 중단할 수 있습니다.
+        </p>
+        <a href="/" class="home-link" id="home-link">메인으로 돌아가기</a>
+    </main>
+
+    <footer class="main-footer">
+        <nav>
+            <a href="/" id="footer-home">Home</a> |
+            <a href="/about.html" id="footer-about">About Us</a> |
+            <a href="/privacy.html" id="footer-privacy">Privacy Policy</a> |
+            <a href="/#contact-form-container" id="footer-contact">Contact Us</a> |
+            <a href="/test.html" id="footer-food-test">Food Test</a>
+        </nav>
+        <p id="footer-copyright">&copy; 2026 AI Product Builder</p>
+    </footer>
+
+    <script src="main.js"></script>
+    <script type="text/javascript">
+        // Re-initialize theme and language for this page
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeToggleButton = document.getElementById('theme-toggle');
+            const languageToggleButton = document.getElementById('language-toggle');
+            const body = document.body;
+
+            // Theme toggle functionality
+            themeToggleButton.addEventListener('click', () => {
+                body.classList.toggle('dark-mode');
+                const isDarkMode = body.classList.contains('dark-mode');
+                localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+                themeToggleButton.textContent = isDarkMode ? '☀️' : '🌙';
+            });
+
+            // Load saved theme from localStorage
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                body.classList.add('dark-mode');
+                themeToggleButton.textContent = '☀️';
+            } else {
+                body.classList.remove('dark-mode');
+                themeToggleButton.textContent = '🌙';
+            }
+
+            // Language functionality
+            const translations = {
+                'page-title': {
+                    'ko': '이용 약관',
+                    'en': 'Terms of Service'
+                },
+                'terms-heading': {
+                    'ko': '이용 약관',
+                    'en': 'Terms of Service'
+                },
+                'terms-content-p1': {
+                    'ko': '본 웹사이트(AI-product-builder)의 서비스 이용에 오신 것을 환영합니다. 본 약관은 귀하가 본 웹사이트의 서비스를 이용하는 데 적용되는 조건 및 규칙을 명시합니다. 서비스를 이용하기 전에 본 약관을 주의 깊게 읽어 주시기 바랍니다.',
+                    'en': 'Welcome to the services of this website (AI-product-builder). These terms specify the conditions and rules that apply to your use of this website's services. Please read these terms carefully before using the services.'
+                },
+                'terms-section-1-title': {
+                    'ko': '1. 서비스 이용',
+                    'en': '1. Use of Service'
+                },
+                'terms-section-1-content': {
+                    'ko': '본 웹사이트는 점심 메뉴 추천, AI 기반 음식 선호도 테스트, 제휴 문의, 댓글 기능 등을 제공합니다. 모든 서비스는 "있는 그대로" 제공되며, 웹사이트는 서비스의 중단, 오류 또는 손실에 대해 책임을 지지 않습니다.',
+                    'en': 'This website provides services such as lunch menu recommendations, AI-based food preference tests, partnership inquiries, and comment features. All services are provided "as is," and the website is not responsible for service interruptions, errors, or losses.'
+                },
+                'terms-section-2-title': {
+                    'ko': '2. 사용자 의무',
+                    'en': '2. User Obligations'
+                },
+                'terms-section-2-content': {
+                    'ko': '귀하는 본 웹사이트의 서비스를 불법적인 목적으로 사용하지 않을 것에 동의합니다. 서비스를 이용하는 동안 다른 사용자에게 불쾌감을 주거나, 법률을 위반하는 행위를 하지 않아야 합니다. 제공된 AI 테스트 결과는 오락 및 참고용이며, 전문가의 조언을 대체할 수 없습니다.',
+                    'en': 'You agree not to use the services of this website for illegal purposes. While using the service, you must not offend other users or violate any laws. The AI test results provided are for entertainment and reference only and cannot replace professional advice.'
+                },
+                'terms-section-3-title': {
+                    'ko': '3. 개인정보 보호',
+                    'en': '3. Privacy Protection'
+                },
+                'terms-section-3-content': {
+                    'ko': '귀하의 개인정보 보호는 본 웹사이트의 최우선 가치입니다. 개인정보 수집, 이용 및 보호에 관한 자세한 내용은 별도의 개인정보처리방침을 참조해 주시기 바랍니다.',
+                    'en': 'Your privacy protection is the top priority of this website. For detailed information on the collection, use, and protection of personal information, please refer to the separate Privacy Policy.'
+                },
+                'terms-section-4-title': {
+                    'ko': '4. 저작권',
+                    'en': '4. Copyright'
+                },
+                'terms-section-4-content': {
+                    'ko': '본 웹사이트의 모든 콘텐츠(텍스트, 이미지, 코드 등)에 대한 저작권은 본 웹사이트 또는 해당 콘텐츠 제공자에게 있습니다. 무단 복제, 배포 또는 상업적 이용을 금지합니다.',
+                    'en': 'The copyright for all content (text, images, code, etc.) on this website belongs to this website or its respective content providers. Unauthorized reproduction, distribution, or commercial use is prohibited.'
+                },
+                'terms-section-5-title': {
+                    'ko': '5. 약관 변경',
+                    'en': '5. Changes to Terms'
+                },
+                'terms-section-5-content': {
+                    'ko': '본 웹사이트는 필요한 경우 약관을 변경할 수 있습니다. 변경 사항은 웹사이트에 게시된 날로부터 효력이 발생하며, 변경된 약관에 동의하지 않는 경우 서비스 이용을 중단할 수 있습니다.',
+                    'en': 'This website may change its terms when necessary. Changes take effect from the date of posting on the website. If you do not agree to the changed terms, you may stop using the service.'
+                },
+                'home-link': {
+                    'ko': '메인으로 돌아가기',
+                    'en': 'Go back to Main'
+                }
+            };
+
+            let currentLang = localStorage.getItem('lang') || 'ko';
+
+            function setLanguage(lang) {
+                document.documentElement.lang = lang;
+                for (const id in translations) {
+                    const element = document.getElementById(id);
+                    if (element) {
+                        element.textContent = translations[id][lang];
+                    }
+                }
+                languageToggleButton.textContent = (lang === 'ko' ? 'EN' : 'KO');
+            }
+
+            setLanguage(currentLang);
+
+            languageToggleButton.addEventListener('click', () => {
+                currentLang = (currentLang === 'ko' ? 'en' : 'ko');
+                localStorage.setItem('lang', currentLang);
+                setLanguage(currentLang);
+            });
+        });
+    </script>
+</body>
+</html>

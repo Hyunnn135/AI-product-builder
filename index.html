@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+    <main class="container">
         <div class="top-right-buttons">
             <button id="theme-toggle">🌙</button>
             <button id="language-toggle">EN</button>
@@ -19,9 +19,9 @@
         <p id="recommendation">버튼을 눌러 추천 메뉴를 받아보세요!</p>
         <button id="recommendButton" class="primary-button">메뉴 추천받기</button>
         <button id="foodTestButton" class="primary-button" onclick="location.href='test.html'">밥 vs 면 테스트하기</button>
-    </div>
+    </main>
 
-    <div class="contact-form-container">
+    <section class="contact-form-container">
         <h2 id="contact-form-title">제휴 문의</h2>
         <form action="https://formspree.io/f/xojndyvb" method="POST">
             <label for="name" id="label-name">이름:</label>
@@ -35,12 +35,25 @@
 
             <button type="submit" id="submit-contact-form">문의 보내기</button>
         </form>
-    </div>
+    </section>
 
-    <div class="disqus-container">
+    <section class="disqus-container">
         <h2 id="comments-title">댓글</h2>
         <div id="disqus_thread"></div>
-    </div>
+    </section>
+
+    <section class="site-description-container">
+        <h2 id="site-description-title">저희는 어떤 사이트인가요?</h2>
+        <p id="site-description-p1">
+            이 웹사이트는 매일의 점심 메뉴 고민을 해결하고, 재미있는 인공지능 기반의 테스트를 통해
+            사용자의 미식 탐험을 돕기 위해 만들어졌습니다. 우리는 단순한 정보 제공을 넘어,
+            새로운 기술이 어떻게 일상에 즐거움을 더할 수 있는지 보여주고자 합니다.
+        </p>
+        <p id="site-description-p2">
+            사용자 친화적인 인터페이스와 유용한 기능들로, 방문하는 모든 분들이
+            새롭고 즐거운 경험을 하시도록 최선을 다하고 있습니다.
+        </p>
+    </section>
 
     <script src="main.js"></script>
     <script>
@@ -68,6 +81,7 @@
             <a href="/" id="footer-home">Home</a> |
             <a href="/about.html" id="footer-about">About Us</a> |
             <a href="/privacy.html" id="footer-privacy">Privacy Policy</a> |
+            <a href="/terms.html" id="footer-terms">Terms of Service</a> |
             <a href="#contact-form-container" id="footer-contact">Contact Us</a> |
             <a href="/test.html" id="footer-food-test">Food Test</a>
         </nav>

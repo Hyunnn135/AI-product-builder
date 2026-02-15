@@ -50,6 +50,18 @@ document.addEventListener('DOMContentLoaded', () => {
             'ko': '댓글',
             'en': 'Comments'
         },
+        'site-description-title': {
+            'ko': '저희는 어떤 사이트인가요?',
+            'en': 'What is Our Site About?'
+        },
+        'site-description-p1': {
+            'ko': '이 웹사이트는 매일의 점심 메뉴 고민을 해결하고, 재미있는 인공지능 기반의 테스트를 통해 사용자의 미식 탐험을 돕기 위해 만들어졌습니다. 우리는 단순한 정보 제공을 넘어, 새로운 기술이 어떻게 일상에 즐거움을 더할 수 있는지 보여주고자 합니다.',
+            'en': 'This website was created to solve your daily lunch menu dilemmas and assist users in their culinary exploration through fun AI-based tests. Beyond simply providing information, we aim to show how new technologies can add joy to everyday life.'
+        },
+        'site-description-p2': {
+            'ko': '사용자 친화적인 인터페이스와 유용한 기능들로, 방문하는 모든 분들이 새롭고 즐거운 경험을 하시도록 최선을 다하고 있습니다.',
+            'en': 'With user-friendly interfaces and useful features, we strive to ensure that all visitors have a new and enjoyable experience.'
+        },
         'lunchMenus': {
             'ko': [
                 "김치찌개", "된장찌개", "비빔밥", "제육볶음", "불고기",

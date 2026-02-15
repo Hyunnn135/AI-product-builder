@@ -10,28 +10,190 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+    <main class="container">
         <div class="top-right-buttons">
             <button id="theme-toggle">🌙</button> <!-- Added theme toggle -->
             <button id="language-toggle">EN</button>
         </div>
         <h1 id="page-title">밥 vs 면: 당신의 취향은?</h1>
         <p id="page-description">웹캠을 통해 당신이 밥을 좋아하는지, 면을 좋아하는지 인공지능이 분석해 드립니다!</p>
+        <p id="test-description-p1">
+            이 페이지에서는 Google Teachable Machine을 활용하여 밥과 면 이미지에 특화된 인공지능 모델을 경험할 수 있습니다.
+            웹캠에 밥 또는 면이 포함된 이미지를 비추면, 모델이 실시간으로 객체를 인식하고 밥 또는 면에 대한 선호도(확률)를 분석합니다.
+        </p>
+        <p id="test-description-p2">
+            이 테스트는 사용자의 식단 취향을 재미있게 탐색하고 인공지능의 시각적 인식 능력을 체험할 수 있도록 고안되었습니다.
+            정확한 결과는 웹캠의 조명, 이미지의 선명도, 모델 학습 데이터에 따라 달라질 수 있습니다.
+        </p>
         <div id="webcam-container"></div>
         <div id="label-container"></div>
         <button type="button" id="startButton" class="primary-button">테스트 시작</button>
         <a href="/" class="home-link" id="home-link">메인으로 돌아가기</a>
-    </div>
+    </main>
 
     <footer class="main-footer">
         <nav>
             <a href="/" id="footer-home">Home</a> |
             <a href="/about.html" id="footer-about">About Us</a> |
             <a href="/privacy.html" id="footer-privacy">Privacy Policy</a> |
+            <a href="/terms.html" id="footer-terms">Terms of Service</a> | <!-- Added link -->
             <a href="/#contact-form-container" id="footer-contact">Contact Us</a> |
             <a href="/test.html" id="footer-food-test">Food Test</a>
         </nav>
         <p id="footer-copyright">&copy; 2026 AI Product Builder</p>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+    <script type="text/javascript">
+        // More API functions here:
+        // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
+
+        const URL = "https://teachablemachine.withgoogle.com/models/B2G9-Yg46/";
+        let model, webcam, labelContainer, maxPredictions;
+
+        const elementsToTranslate = {
+            'page-title': {
+                'ko': '음식 선호도 테스트',
+                'en': 'Food Preference Test'
+            },
+            'page-description': {
+                'ko': '웹캠을 통해 당신이 밥을 좋아하는지, 면을 좋아하는지 인공지능이 분석해 드립니다!',
+                'en': 'Through your webcam, AI will analyze whether you prefer rice or noodles!'
+            },
+            'test-description-p1': {
+                'ko': '이 페이지에서는 Google Teachable Machine을 활용하여 밥과 면 이미지에 특화된 인공지능 모델을 경험할 수 있습니다. 웹캠에 밥 또는 면이 포함된 이미지를 비추면, 모델이 실시간으로 객체를 인식하고 밥 또는 면에 대한 선호도(확률)를 분석합니다.',
+                'en': 'On this page, you can experience an AI model specialized in rice and noodle images using Google Teachable Machine. When you point your webcam at an image containing rice or noodles, the model recognizes the object in real-time and analyzes your preference (probability) for rice or noodles.'
+            },
+            'test-description-p2': {
+                'ko': '이 테스트는 사용자의 식단 취향을 재미있게 탐색하고 인공지능의 시각적 인식 능력을 체험할 수 있도록 고안되었습니다. 정확한 결과는 웹캠의 조명, 이미지의 선명도, 모델 학습 데이터에 따라 달라질 수 있습니다.',
+                'en': 'This test is designed to funnily explore your dietary preferences and experience the visual recognition capabilities of artificial intelligence. Accurate results may vary depending on webcam lighting, image clarity, and model training data.'
+            },
+            'startButton': {
+                'ko': '테스트 시작',
+                'en': 'Start Test'
+            },
+            'home-link': {
+                'ko': '메인으로 돌아가기',
+                'en': 'Go back to Main'
+            },
+            'footer-home': {
+                'ko': '홈',
+                'en': 'Home'
+            },
+            'footer-about': {
+                'ko': '회사 소개',
+                'en': 'About Us'
+            },
+            'footer-privacy': {
+                'ko': '개인정보처리방침',
+                'en': 'Privacy Policy'
+            },
+            'footer-terms': { // New ID for translation
+                'ko': '이용 약관',
+                'en': 'Terms of Service'
+            },
+            'footer-contact': {
+                'ko': '문의하기',
+                'en': 'Contact Us'
+            },
+            'footer-food-test': {
+                'ko': '음식 테스트',
+                'en': 'Food Test'
+            },
+            'footer-copyright': {
+                'ko': '&copy; 2026 AI Product Builder',
+                'en': '&copy; 2026 AI Product Builder'
+            }
+        };
+
+        function setLanguage(lang) {
+            document.documentElement.lang = lang; // Set HTML lang attribute
+            for (const id in elementsToTranslate) {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.textContent = elementsToTranslate[id][lang];
+                }
+            }
+            // Update button text explicitly as it might not be in elementsToTranslate initially
+            const languageToggleButton = document.getElementById('language-toggle');
+            if (languageToggleButton) {
+                languageToggleButton.textContent = (lang === 'ko' ? 'EN' : 'KO');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const startButton = document.getElementById('startButton');
+            const languageToggleButton = document.getElementById('language-toggle');
+            const themeToggleButton = document.getElementById('theme-toggle'); // Get theme toggle button
+            const body = document.body; // Get body element
+
+            // Language functionality
+            let currentLang = localStorage.getItem('lang') || 'ko';
+            setLanguage(currentLang);
+
+            languageToggleButton.addEventListener('click', () => {
+                currentLang = (currentLang === 'ko' ? 'en' : 'ko');
+                localStorage.setItem('lang', currentLang);
+                setLanguage(currentLang);
+            });
+
+            // Theme toggle functionality (similar to main.js)
+            themeToggleButton.addEventListener('click', () => {
+                body.classList.toggle('dark-mode');
+                const isDarkMode = body.classList.contains('dark-mode');
+                localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+                themeToggleButton.textContent = isDarkMode ? '☀️' : '🌙';
+            });
+
+            // Load saved theme from localStorage (similar to main.js)
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                body.classList.add('dark-mode');
+                themeToggleButton.textContent = '☀️';
+            } else {
+                body.classList.remove('dark-mode');
+                themeToggleButton.textContent = '🌙';
+            }
+
+            startButton.addEventListener('click', init);
+        });
+
+        async function init() {
+            const modelURL = URL + "model.json";
+            const metadataURL = URL + "metadata.json";
+
+            model = await tmImage.load(modelURL, metadataURL);
+            maxPredictions = model.getTotalClasses();
+
+            const flip = true;
+            webcam = new tmImage.Webcam(200, 200, flip);
+            await webcam.setup();
+            await webcam.play();
+            window.requestAnimationFrame(loop);
+
+            document.getElementById("webcam-container").appendChild(webcam.canvas);
+            labelContainer = document.getElementById("label-container");
+            for (let i = 0; i < maxPredictions; i++) {
+                labelContainer.appendChild(document.createElement("div"));
+            }
+            document.getElementById('startButton').style.display = 'none';
+        }
+
+        async function loop() {
+            webcam.update(); // update the webcam frame
+            await predict();
+            window.requestAnimationFrame(loop);
+        }
+
+        async function predict() {
+            const prediction = await model.predict(webcam.canvas);
+            for (let i = 0; i < maxPredictions; i++) {
+                const classPrediction =
+                    prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+                labelContainer.childNodes[i].innerHTML = classPrediction;
+            }
+        }
+    </script>
 </body>
 </html>
