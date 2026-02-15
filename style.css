@@ -88,3 +88,70 @@ p#recommendation {
 #recommendButton:hover {
     background-color: var(--button-hover-bg-color);
 }
+
+.contact-form-container {
+    background-color: var(--container-bg-color);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Align text to left for form labels */
+    max-width: 500px;
+    width: 90%;
+    margin-top: 20px; /* Space between the two containers */
+    transition: background-color 0.3s ease;
+}
+
+.contact-form-container h2 {
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 25px;
+}
+
+.contact-form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form-container label {
+    margin-bottom: 8px;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.contact-form-container input[type="text"],
+.contact-form-container input[type="email"],
+.contact-form-container textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: var(--bg-color); /* Use a lighter background for input fields */
+    color: var(--text-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.contact-form-container input[type="text"]:focus,
+.contact-form-container input[type="email"]:focus,
+.contact-form-container textarea:focus {
+    border-color: var(--button-bg-color); /* Highlight on focus */
+    outline: none;
+}
+
+.contact-form-container button[type="submit"] {
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center; /* Center the submit button */
+    width: 50%; /* Make button smaller than full width */
+    margin-top: 10px;
+}
+
+.contact-form-container button[type="submit"]:hover {
+    background-color: var(--button-hover-bg-color);
+}
