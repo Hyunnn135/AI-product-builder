@@ -48,9 +48,6 @@ body {
 }
 
 #theme-toggle {
-    position: absolute;
-    top: 15px;
-    right: 15px;
     background: var(--toggle-bg-color);
     border: none;
     cursor: pointer;
