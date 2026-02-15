@@ -73,7 +73,8 @@ p#recommendation {
     min-height: 1.5em;
 }
 
-#recommendButton {
+/* New common styling for primary action buttons */
+.primary-button {
     background-color: var(--button-bg-color);
     color: var(--button-text-color);
     border: none;
@@ -82,10 +83,19 @@ p#recommendation {
     font-size: 1em;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-top: 20px; /* Add margin to separate from content, can be overridden if needed */
+}
+
+.primary-button:hover {
+    background-color: var(--button-hover-bg-color);
+}
+
+#recommendButton {
+    /* Now uses .primary-button styles */
 }
 
 #recommendButton:hover {
-    background-color: var(--button-hover-bg-color);
+    /* Now uses .primary-button:hover styles */
 }
 
 .contact-form-container {
@@ -237,22 +247,5 @@ p#recommendation {
 }
 
 .top-right-buttons button:hover {
-    background-color: var(--button-hover-bg-color);
-}
-
-/* Styling for the Start Test button in test.html */
-#startButton {
-    background-color: var(--button-bg-color);
-    color: var(--button-text-color);
-    border: none;
-    padding: 12px 25px;
-    border-radius: 5px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 20px;
-}
-
-#startButton:hover {
     background-color: var(--button-hover-bg-color);
 }

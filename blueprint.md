@@ -15,7 +15,7 @@ This project is a simple web application that provides random lunch menu recomme
     *   **Consistent Button Positioning:** Language toggle buttons are consistently positioned at the top-right of the page on both `index.html` and `test.html`. The theme toggle on `index.html` is also within this `top-right-buttons` group.
     *   **Button Repositioning (`test.html`):** The "테스트 시작" button in `test.html` has been moved to the bottom-center of the page.
     *   **Navigation:** A link in `index.html` directs to this page, and a link in `test.html` returns to the main page.
-    *   **Styling:** `style.css` has been thoroughly updated with specific styles for the webcam container, label display, navigation links, and the new button layouts, ensuring theme consistency and correct positioning across both pages. The overlapping issue for the theme and language toggle buttons on the main page was resolved by removing absolute positioning from individual toggle buttons, allowing the flex container to manage their layout.
+    *   **Styling:** `style.css` has been thoroughly updated with specific styles for the webcam container, label display, navigation links, and the new button layouts, ensuring theme consistency and correct positioning across both pages. The overlapping issue for the theme and language toggle buttons on the main page was resolved by removing absolute positioning from individual toggle buttons, allowing the flex container to manage their layout. A new `.primary-button` class has been introduced to provide a consistent design for main action buttons, applied to "메뉴 추천받기" and "밥 vs 면 테스트하기" on `index.html`, and "테스트 시작" on `test.html`.
 
 ### Version 1.3 (Disqus Comment Integration)
 *   **Purpose:** Add a comment section to the page using Disqus.
@@ -44,4 +44,4 @@ This project is a simple web application that provides random lunch menu recomme
     *   `main.js`: Implements the core logic. It defines a list of diverse lunch menus, and on button click, it randomly selects and displays one of the menus in the designated paragraph.
 
 ## Current Plan
-All UI enhancements for the "밥 vs 면" Teachable Machine test page, including button repositioning and comprehensive language selection across both pages, have been implemented, and the button overlap issue has been resolved. The next step is to verify these changes, commit them, and push to the GitHub repository for deployment.
+All UI enhancements for the "밥 vs 면" Teachable Machine test page, including button repositioning and comprehensive language selection across both pages, have been implemented, and the button overlap issue has been resolved. The main action buttons now share a consistent primary design. The next step is to verify these changes, commit them, and push to the GitHub repository for deployment.
