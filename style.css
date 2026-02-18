@@ -1,207 +1,334 @@
 :root {
-    --bg-color: #f4f4f4;
-    --text-color: #333;
-    --container-bg-color: #fff;
-    --button-bg-color: #007bff;
-    --button-text-color: #fff;
-    --button-hover-bg-color: #0056b3;
-    --toggle-bg-color: #ddd;
-    --toggle-fg-color: #fff;
-    --toggle-icon-color: #666;
+    /* Color Palette - Vibrant and Modern */
+    --primary-color: #6a0dad; /* A deep purple */
+    --primary-light: #9d5fe0;
+    --primary-dark: #4a0072;
+    --accent-color: #ff6f61; /* A bright coral */
+    --accent-light: #ffa39b;
+    --accent-dark: #cc3f2f;
+
+    --bg-color: #f0f2f5; /* Light grey-blue background */
+    --text-color: #2c3e50; /* Dark grey-blue text */
+    --container-bg-color: #ffffff;
+    --border-color: #e0e0e0;
+    --input-bg-color: #fdfefe;
+    --input-border-focus: var(--primary-light);
+
+    /* Button specific colors */
+    --button-bg-color: var(--primary-color);
+    --button-text-color: #ffffff;
+    --button-hover-bg-color: var(--primary-dark);
+
+    /* Toggle specific colors */
+    --toggle-bg-color: var(--border-color);
+    --toggle-fg-color: var(--container-bg-color);
+    --toggle-icon-color: var(--text-color);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.12);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
+    --shadow-interactive: 0 0 15px rgba(106, 13, 173, 0.4); /* Glow effect for primary-color */
+
+    /* Typography */
+    --font-family-base: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-size-base: 16px;
+    --line-height-base: 1.6;
 }
 
 body.dark-mode {
-    --bg-color: #2c2c2c;
-    --text-color: #f4f4f4;
-    --container-bg-color: #424242;
-    --button-bg-color: #009688;
-    --button-hover-bg-color: #00796b;
-    --toggle-bg-color: #555;
-    --toggle-fg-color: #424242;
-    --toggle-icon-color: #f4f4f4;
+    --primary-color: #8a2be2; /* Darker purple for dark mode */
+    --primary-light: #b18bdc;
+    --primary-dark: #6a0dad;
+    --accent-color: #ff8c00; /* Dark mode accent: a vibrant orange */
+    --accent-light: #ffa726;
+    --accent-dark: #cc7000;
+
+    --bg-color: #1a1a2e; /* Deep dark background */
+    --text-color: #e0e0e0; /* Light text for dark mode */
+    --container-bg-color: #2b2b40;
+    --border-color: #44445c;
+    --input-bg-color: #3b3b50;
+    --input-border-focus: var(--primary-light);
+
+    /* Button specific colors for dark mode */
+    --button-bg-color: var(--primary-color);
+    --button-text-color: #ffffff;
+    --button-hover-bg-color: var(--primary-dark);
+
+    /* Toggle specific colors for dark mode */
+    --toggle-bg-color: var(--border-color);
+    --toggle-fg-color: var(--container-bg-color);
+    --toggle-icon-color: var(--text-color);
+
+    --shadow-interactive: 0 0 15px rgba(138, 43, 226, 0.4); /* Glow effect for dark mode primary-color */
+}
+
+/* Reset and Base Styles */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
     display: flex;
-    flex-direction: column; /* Stack containers vertically */
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    padding: 20px 0; /* Add some padding to the top and bottom */
+    padding: 30px 20px; /* Increased padding */
     background-color: var(--bg-color);
     color: var(--text-color);
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.1' fill-rule='evenodd'%3E%3Cpath d='M0 0h30v30H0V0zm15 15h15v15H15V15zM0 30h30v30H0V30zm15 15h15v15H15V45z'/%3E%3C/g%3E%3C/svg%3E"); /* Subtle noise texture */
+    background-repeat: repeat;
 }
 
-.container {
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-base);
+    color: var(--text-color);
+    margin-bottom: 0.8em;
+    font-weight: 700; /* Bold headings */
+}
+
+h1 {
+    font-size: 2.8em;
+    font-weight: 800; /* Extra bold for main heading */
+    letter-spacing: -0.03em;
+}
+
+h2 {
+    font-size: 2.2em;
+    font-weight: 700;
+}
+
+p {
+    margin-bottom: 1em;
+    color: var(--text-color);
+}
+
+.container,
+.contact-form-container,
+.disqus-container,
+.site-description-container,
+.main-footer {
     background-color: var(--container-bg-color);
     padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px; /* Slightly more rounded corners */
+    box-shadow: var(--shadow-lg); /* Deeper shadow for a lifted look */
     text-align: center;
-    max-width: 500px;
-    width: 90%;
+    max-width: 600px; /* Increased max-width for content */
+    width: 95%;
+    margin-bottom: 25px; /* Space between sections */
     position: relative;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
 }
 
-#theme-toggle {
+.top-right-buttons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 12px;
+}
+
+.top-right-buttons button,
+#theme-toggle { /* Apply shared styles */
     background: var(--toggle-bg-color);
     border: none;
     cursor: pointer;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.2em;
+    font-size: 1.1em;
     color: var(--toggle-icon-color);
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm); /* Small shadow for buttons */
+    outline: none; /* Remove default focus outline */
 }
 
-h1 {
-    color: var(--text-color);
-    margin-bottom: 20px;
+.top-right-buttons button:hover,
+#theme-toggle:hover {
+    background-color: var(--primary-light);
+    color: #ffffff;
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+#main-heading {
+    margin-bottom: 25px;
+    color: var(--primary-color); /* Highlight main heading */
+    text-shadow: var(--shadow-sm);
 }
 
 p#recommendation {
-    font-size: 1.2em;
-    margin-bottom: 30px;
+    font-size: 1.3em;
+    margin-bottom: 35px;
     min-height: 1.5em;
+    font-weight: 500;
+    color: var(--text-color);
 }
 
-/* New common styling for primary action buttons */
+/* Primary Action Buttons */
 .primary-button {
     background-color: var(--button-bg-color);
     color: var(--button-text-color);
     border: none;
-    padding: 12px 25px;
-    border-radius: 5px;
-    font-size: 1em;
+    padding: 15px 30px;
+    border-radius: 8px; /* More rounded */
+    font-size: 1.1em;
+    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 20px; /* Add margin to separate from content, can be overridden if needed */
+    transition: all 0.3s ease;
+    margin-top: 25px;
+    box-shadow: var(--shadow-md); /* Lifted effect */
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    outline: none;
 }
 
 .primary-button:hover {
     background-color: var(--button-hover-bg-color);
+    box-shadow: var(--shadow-lg), var(--shadow-interactive); /* Deeper shadow + glow */
+    transform: translateY(-3px); /* More pronounced lift */
 }
 
-#recommendButton {
-    /* Now uses .primary-button styles */
+.primary-button:active {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
 }
 
-#recommendButton:hover {
-    /* Now uses .primary-button:hover styles */
-}
-
+/* Contact Form Specific Styles */
 .contact-form-container {
-    background-color: var(--container-bg-color);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: left; /* Align text to left for form labels */
-    max-width: 500px;
-    width: 90%;
-    margin-top: 20px; /* Space between the two containers */
-    transition: background-color 0.3s ease;
+    text-align: left;
 }
 
 .contact-form-container h2 {
     text-align: center;
-    color: var(--text-color);
-    margin-bottom: 25px;
-}
-
-.contact-form-container form {
-    display: flex;
-    flex-direction: column;
+    margin-bottom: 30px;
+    color: var(--primary-color);
 }
 
 .contact-form-container label {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     color: var(--text-color);
-    font-weight: bold;
+    font-weight: 600;
+    display: block; /* Make label a block element for better spacing */
 }
 
 .contact-form-container input[type="text"],
 .contact-form-container input[type="email"],
 .contact-form-container textarea {
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 12px;
+    margin-bottom: 25px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
     font-size: 1em;
-    background-color: var(--bg-color); /* Use a lighter background for input fields */
+    background-color: var(--input-bg-color);
     color: var(--text-color);
-    transition: background-color 0.3s ease, border-color 0.3s ease;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    width: 100%; /* Full width inputs */
 }
 
 .contact-form-container input[type="text"]:focus,
 .contact-form-container input[type="email"]:focus,
 .contact-form-container textarea:focus {
-    border-color: var(--button-bg-color); /* Highlight on focus */
+    border-color: var(--input-border-focus);
+    box-shadow: 0 0 0 3px rgba(var(--primary-color-rgb), 0.2); /* Soft focus ring */
     outline: none;
 }
 
 .contact-form-container button[type="submit"] {
-    background-color: var(--button-bg-color);
+    background-color: var(--accent-color); /* Use accent color for submit */
     color: var(--button-text-color);
     border: none;
-    padding: 12px 25px;
-    border-radius: 5px;
-    font-size: 1em;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    align-self: center; /* Center the submit button */
-    width: 50%; /* Make button smaller than full width */
-    margin-top: 10px;
+    transition: all 0.3s ease;
+    align-self: center;
+    width: auto; /* Auto width for submit button */
+    min-width: 180px;
+    margin-top: 20px;
+    box-shadow: var(--shadow-md);
 }
 
 .contact-form-container button[type="submit"]:hover {
-    background-color: var(--button-hover-bg-color);
+    background-color: var(--accent-dark);
+    box-shadow: var(--shadow-lg), 0 0 15px rgba(255, 111, 97, 0.4); /* Glow effect with accent color */
+    transform: translateY(-3px);
 }
 
-.disqus-container {
-    background-color: var(--container-bg-color);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-    width: 90%;
-    margin-top: 20px;
-    transition: background-color 0.3s ease;
-}
-
-.disqus-container h2 {
+.disqus-container,
+.site-description-container {
     text-align: center;
-    color: var(--text-color);
+}
+
+.disqus-container h2,
+.site-description-container h2 {
+    color: var(--primary-color);
     margin-bottom: 25px;
 }
 
+.site-description-container p {
+    font-size: 1.05em;
+    line-height: 1.7;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Webcam and Label Container (for test.html) */
 #webcam-container {
-    margin-top: 20px;
+    margin-top: 25px;
     display: flex;
     justify-content: center;
+    padding: 15px;
+    background-color: var(--container-bg-color);
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    max-width: 500px; /* Constrain width */
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #webcam-container canvas {
-    border: 2px solid var(--text-color);
+    border: 2px solid var(--border-color);
     border-radius: 8px;
+    box-shadow: var(--shadow-sm);
 }
 
 #label-container {
-    margin-top: 20px;
+    margin-top: 25px;
     font-size: 1.1em;
     color: var(--text-color);
+    background-color: var(--container-bg-color);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    max-width: 500px;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #label-container div {
-    padding: 5px;
-    border-bottom: 1px dashed var(--text-color);
+    padding: 8px;
+    border-bottom: 1px dashed var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 #label-container div:last-child {
@@ -211,74 +338,147 @@ p#recommendation {
 .home-link {
     display: inline-block;
     margin-top: 30px;
-    color: var(--button-bg-color);
+    color: var(--primary-color);
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
     font-size: 1.1em;
-}
-
-.home-link:hover {
-    text-decoration: underline;
-}
-
-.top-right-buttons {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    display: flex;
-    gap: 10px; /* Space between buttons */
-}
-
-/* Styling for buttons inside top-right-buttons, similar to theme-toggle */
-.top-right-buttons button {
-    background: var(--toggle-bg-color);
-    border: none;
-    cursor: pointer;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1em; /* Smaller font for smaller buttons */
-    color: var(--toggle-icon-color);
-    transition: background-color 0.3s ease, color 0.3s ease;
-    font-weight: bold; /* Make EN/KO stand out */
-}
-
-.top-right-buttons button:hover {
-    background-color: var(--button-hover-bg-color);
-}
-
-.main-footer {
-    width: 100%;
-    max-width: 500px; /* Match container max-width */
-    margin-top: 30px;
-    padding: 20px;
-    text-align: center;
-    background-color: var(--container-bg-color);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
-    color: var(--text-color);
-}
-
-.main-footer nav a {
-    color: var(--button-bg-color); /* Use a distinct color for links */
-    text-decoration: none;
-    margin: 0 10px;
-    font-weight: bold;
     transition: color 0.3s ease;
 }
 
-.main-footer nav a:hover {
-    color: var(--button-hover-bg-color);
+.home-link:hover {
+    color: var(--primary-light);
     text-decoration: underline;
+}
+
+.main-footer {
+    width: 95%; /* Adjust width to match other containers */
+    max-width: 600px;
+    margin-top: 35px;
+    padding: 25px;
+    text-align: center;
+    background-color: var(--container-bg-color);
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
+    color: var(--text-color);
+}
+
+.main-footer nav {
+    margin-bottom: 15px;
+}
+
+.main-footer nav a {
+    color: var(--primary-color);
+    text-decoration: none;
+    margin: 0 12px;
+    font-weight: 600;
+    transition: color 0.3s ease, transform 0.2s ease;
+    display: inline-block; /* For transform */
+}
+
+.main-footer nav a:hover {
+    color: var(--primary-light);
+    text-decoration: underline;
+    transform: translateY(-1px);
 }
 
 .main-footer p#footer-copyright {
     margin-top: 15px;
     font-size: 0.9em;
     color: var(--text-color);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.2em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .container,
+    .contact-form-container,
+    .disqus-container,
+    .site-description-container,
+    .main-footer,
+    #webcam-container,
+    #label-container {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .primary-button {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+
+    .top-right-buttons {
+        top: 15px;
+        right: 15px;
+        gap: 8px;
+    }
+
+    .top-right-buttons button,
+    #theme-toggle {
+        width: 38px;
+        height: 38px;
+        font-size: 1em;
+    }
+
+    .main-footer nav a {
+        margin: 0 8px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.6em;
+    }
+
+    body {
+        padding: 20px 10px;
+    }
+
+    .container,
+    .contact-form-container,
+    .disqus-container,
+    .site-description-container,
+    .main-footer,
+    #webcam-container,
+    #label-container {
+        width: 100%; /* Full width on very small screens */
+        border-radius: 8px;
+        margin-bottom: 15px;
+    }
+
+    .primary-button {
+        width: 100%;
+        font-size: 0.95em;
+    }
+
+    .contact-form-container button[type="submit"] {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .main-footer nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .main-footer nav a {
+        flex: 1 1 auto;
+        margin: 5px;
+        font-size: 0.85em;
+    }
 }
 

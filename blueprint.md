@@ -3,6 +3,28 @@
 ## Overview
 This project is a simple web application that provides random lunch menu recommendations to the user. It is built using modern web standards (HTML, CSS, JavaScript) without external frameworks.
 
+## Current Plan
+### Version 2.0: Modern & Trendy Redesign
+*   **Purpose:** To overhaul the visual design of the website, aligning it with modern and trendy aesthetics as per the "Visual Design" and "Bold Definition" guidelines.
+*   **Design Philosophy:** The new design will be clean, vibrant, and interactive, focusing on a premium user experience. It will incorporate expressive typography, a rich color palette, subtle textures, and interactive elements with depth.
+*   **Key Changes:**
+    *   **Typography:**
+        *   **Font:** Implement "Pretendard" from Google Fonts, a modern and highly readable font suitable for both Korean and English.
+        *   **Hierarchy:** Establish a clear visual hierarchy with varying font weights and sizes for headings, paragraphs, and buttons.
+    *   **Color Palette:**
+        *   Introduce a new, vibrant, and energetic color palette.
+        *   Define distinct color schemes for both light and dark modes using CSS variables.
+    *   **Background & Texture:**
+        *   Apply a subtle noise texture to the main background to create a premium, tactile feel. This will be achieved using a generated SVG to avoid external dependencies.
+    *   **Layout & Spacing:**
+        *   Refine the layout for better visual balance and rhythm, with a focus on clean spacing and alignment.
+        *   Enhance responsiveness to ensure a seamless experience on all devices.
+    *   **Buttons & Interactive Elements:**
+        *   **Buttons:** Redesign all buttons to have a "lifted" appearance using multi-layered drop shadows. Add a "glow" effect on hover and focus to enhance interactivity.
+        *   **Forms:** Restyle form inputs and labels to be consistent with the new, modern aesthetic.
+    *   **Icons:**
+        *   Where applicable, use a consistent and modern icon set to improve usability and visual appeal (e.g., for theme and language toggles).
+
 ## Project Outline
 ### Version 1.7 (AdSense Optimization - Content Enhancement & Semantic HTML)
 *   **Purpose:** Further optimize the site for Google AdSense approval by enhancing content quality, implementing semantic HTML5 tags, and adding essential legal pages.
@@ -67,6 +89,3 @@ This project is a simple web application that provides random lunch menu recomme
     *   `index.html`: Contains the main structure of the page, including a title, a paragraph to display the recommendation, and a button to trigger a new recommendation.
     *   `style.css`: Provides basic styling for the page, centering content, setting fonts, and styling the button.
     *   `main.js`: Implements the core logic. It defines a list of diverse lunch menus, and on button click, it randomly selects and displays one of the menus in the designated paragraph.
-
-## Current Plan
-The site has been further optimized for Google AdSense approval by enhancing content, implementing semantic HTML, and adding a Terms of Service page. All related changes to HTML files, CSS, and JavaScript have been made. The next step is to verify these changes, commit them, and push to the GitHub repository for deployment.
