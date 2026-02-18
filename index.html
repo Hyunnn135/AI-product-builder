@@ -19,8 +19,16 @@
         <h1 id="main-heading">오늘의 점심 메뉴 추천</h1>
         <p id="recommendation">버튼을 눌러 추천 메뉴를 받아보세요!</p>
         <button id="recommendButton" class="primary-button">메뉴 추천받기</button>
-        <button id="foodTestButton" class="primary-button" onclick="location.href='test.html'">밥 vs 면 테스트하기</button>
+        <button id="kMenuQuizButton" class="primary-button" onclick="location.href='k-menu-test.html'">나에게 맞는 K-메뉴 찾기</button>
     </main>
+
+    <section class="k-food-story-section container">
+        <k-food-story></k-food-story>
+    </section>
+
+    <section class="k-idol-lunch-section container">
+        <k-idol-lunch></k-idol-lunch>
+    </section>
 
     <section class="contact-form-container">
         <h2 id="contact-form-title">제휴 문의</h2>
@@ -83,8 +91,7 @@
             <a href="/about.html" id="footer-about">About Us</a> |
             <a href="/privacy.html" id="footer-privacy">Privacy Policy</a> |
             <a href="/terms.html" id="footer-terms">Terms of Service</a> |
-            <a href="#contact-form-container" id="footer-contact">Contact Us</a> |
-            <a href="/test.html" id="footer-food-test">Food Test</a>
+            <a href="#contact-form-container" id="footer-contact">Contact Us</a>
         </nav>
         <p id="footer-copyright">&copy; 2026 AI Product Builder</p>
     </footer>

@@ -1,11 +1,11 @@
 :root {
     /* Color Palette - Vibrant and Modern */
-    --primary-color: #6a0dad; /* A deep purple */
-    --primary-light: #9d5fe0;
-    --primary-dark: #4a0072;
-    --accent-color: #ff6f61; /* A bright coral */
-    --accent-light: #ffa39b;
-    --accent-dark: #cc3f2f;
+    --primary-color: #2e8b57; /* Sea Green */
+    --primary-light: #3cb371; /* Medium Sea Green */
+    --primary-dark: #228b22; /* Forest Green */
+    --accent-color: #6a5acd; /* Slate Blue */
+    --accent-light: #8a2be2; /* Blue Violet */
+    --accent-dark: #483d8b; /* Dark Slate Blue */
 
     --bg-color: #f0f2f5; /* Light grey-blue background */
     --text-color: #2c3e50; /* Dark grey-blue text */
@@ -29,7 +29,7 @@
     --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
     --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
     --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
-    --shadow-interactive: 0 0 15px rgba(106, 13, 173, 0.4); /* Glow effect for primary-color */
+    --shadow-interactive: 0 0 15px rgba(46, 139, 87, 0.4); /* Updated glow for Sea Green */
 
     /* Typography */
     --font-family-base: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -38,12 +38,12 @@
 }
 
 body.dark-mode {
-    --primary-color: #8a2be2; /* Darker purple for dark mode */
-    --primary-light: #b18bdc;
-    --primary-dark: #6a0dad;
-    --accent-color: #ff8c00; /* Dark mode accent: a vibrant orange */
-    --accent-light: #ffa726;
-    --accent-dark: #cc7000;
+    --primary-color: #3cb371; /* Medium Sea Green */
+    --primary-light: #66cdaa; /* Medium Aquamarine */
+    --primary-dark: #228b22; /* Forest Green */
+    --accent-color: #8a2be2; /* Blue Violet */
+    --accent-light: #9370db; /* Medium Purple */
+    --accent-dark: #483d8b; /* Dark Slate Blue */
 
     --bg-color: #1a1a2e; /* Deep dark background */
     --text-color: #e0e0e0; /* Light text for dark mode */
@@ -62,7 +62,7 @@ body.dark-mode {
     --toggle-fg-color: var(--container-bg-color);
     --toggle-icon-color: var(--text-color);
 
-    --shadow-interactive: 0 0 15px rgba(138, 43, 226, 0.4); /* Glow effect for dark mode primary-color */
+    --shadow-interactive: 0 0 15px rgba(60, 179, 113, 0.4); /* Glow effect for dark mode primary-color */
 }
 
 /* Reset and Base Styles */
@@ -288,52 +288,6 @@ p#recommendation {
     margin-right: auto;
 }
 
-/* Webcam and Label Container (for test.html) */
-#webcam-container {
-    margin-top: 25px;
-    display: flex;
-    justify-content: center;
-    padding: 15px;
-    background-color: var(--container-bg-color);
-    border-radius: 12px;
-    box-shadow: var(--shadow-md);
-    max-width: 500px; /* Constrain width */
-    width: 95%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#webcam-container canvas {
-    border: 2px solid var(--border-color);
-    border-radius: 8px;
-    box-shadow: var(--shadow-sm);
-}
-
-#label-container {
-    margin-top: 25px;
-    font-size: 1.1em;
-    color: var(--text-color);
-    background-color: var(--container-bg-color);
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: var(--shadow-md);
-    max-width: 500px;
-    width: 95%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#label-container div {
-    padding: 8px;
-    border-bottom: 1px dashed var(--border-color);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#label-container div:last-child {
-    border-bottom: none;
-}
 
 .home-link {
     display: inline-block;

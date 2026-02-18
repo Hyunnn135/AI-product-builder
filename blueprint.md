@@ -4,6 +4,19 @@
 This project is a simple web application that provides random lunch menu recommendations to the user. It is built using modern web standards (HTML, CSS, JavaScript) without external frameworks.
 
 ## Current Plan
+### Version 2.1: K-Culture Content & Design Refinement
+*   **Purpose:** To enrich the user experience for foreign visitors interested in Korean culture by adding K-food related content and to refine the overall visual design. The "밥 vs 면 테스트하기" feature will be removed due to reduced relevance.
+*   **Key Changes:**
+    *   **Content Addition (K-Culture Focus):**
+        *   **K-Food 메뉴별 스토리텔링:** Integrate a section displaying cultural stories, origins, or interesting facts about the recommended lunch menu. This will be implemented as a Web Component for reusability.
+        *   **나에게 맞는 K-메뉴 찾기 심리 테스트:** Create an interactive quiz that recommends Korean dishes based on user preferences (tastes, moods, K-Pop biases). This will be a new dedicated page.
+        *   **K-POP 아이돌이 즐겨 먹는 점심:** Add a section showcasing lunch menus favored by popular K-Pop idols, implemented as a Web Component.
+    *   **Feature Removal:**
+        *   **"밥 vs 면 테스트하기"**: Completely remove `test.html`, and all related links, buttons, and styles from `index.html`, `main.js`, and `style.css`.
+    *   **Visual Design Refinement:**
+        *   **Color Palette Update:** Change the primary purple color scheme to a more trendy and calming blue/green tone to enhance the modern aesthetic. Adjust corresponding dark mode colors.
+
+## Project Outline
 ### Version 2.0: Modern & Trendy Redesign
 *   **Purpose:** To overhaul the visual design of the website, aligning it with modern and trendy aesthetics as per the "Visual Design" and "Bold Definition" guidelines.
 *   **Design Philosophy:** The new design will be clean, vibrant, and interactive, focusing on a premium user experience. It will incorporate expressive typography, a rich color palette, subtle textures, and interactive elements with depth.
@@ -25,7 +38,6 @@ This project is a simple web application that provides random lunch menu recomme
     *   **Icons:**
         *   Where applicable, use a consistent and modern icon set to improve usability and visual appeal (e.g., for theme and language toggles).
 
-## Project Outline
 ### Version 1.7 (AdSense Optimization - Content Enhancement & Semantic HTML)
 *   **Purpose:** Further optimize the site for Google AdSense approval by enhancing content quality, implementing semantic HTML5 tags, and adding essential legal pages.
 *   **Features:**
