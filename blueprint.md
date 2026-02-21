@@ -17,6 +17,12 @@ This project is a simple web application that provides random lunch menu recomme
         *   **Color Palette Update:** Change the primary purple color scheme to a more trendy and calming blue/green tone to enhance the modern aesthetic. Adjust corresponding dark mode colors.
 
 ## Project Outline
+### Version 2.3: Microsoft Clarity Integration
+*   **Purpose:** To gain deeper insights into user behavior and interactions on the website using Microsoft Clarity.
+*   **Key Changes:**
+    *   **Microsoft Clarity Script Insertion:** The Microsoft Clarity tracking script with ID `vkovn49wnp` has been added to the `<head>` section of all HTML pages: `index.html`, `about.html`, `k-menu-test.html`, `privacy.html`, and `terms.html`.
+    *   **Data Collection:** Enables heatmaps, session recordings, and insights to improve user experience and identify usability issues.
+
 ### Version 2.2: Google Analytics Integration
 *   **Purpose:** To track and analyze website traffic and user behavior using Google Analytics.
 *   **Key Changes:**
