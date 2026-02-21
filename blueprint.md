@@ -20,7 +20,7 @@ This project is a simple web application that provides random lunch menu recomme
 ### Version 2.2: Google Analytics Integration
 *   **Purpose:** To track and analyze website traffic and user behavior using Google Analytics.
 *   **Key Changes:**
-    *   **Google Tag (gtag.js) Insertion:** The Google Analytics tag (`gtag.js`) with ID `G-ZW45511EJ7` has been added immediately after the opening `<head>` tag in all HTML pages: `index.html`, `about.html`, `k-menu-test.html`, `privacy.html`, and `terms.html`.
+    *   **Google Tag (gtag.js) Insertion:** The Google Analytics tag (`gtag.js`) with ID `G-6FY5JZZYR6` has been added immediately after the opening `<head>` tag in all HTML pages: `index.html`, `about.html`, `k-menu-test.html`, `privacy.html`, and `terms.html`.
     *   **Data Collection:** Configured to collect standard web stream data to provide insights into page views, user engagement, and other key metrics.
 
 ### Version 2.1: K-Culture Content & Design Refinement
